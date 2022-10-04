@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Project</title>
+</head>
+<body>
+    <!--Weather dashboard with form inputs able to search for city-->
+    <!--Presents current and future weather conditions and city is added to search history-->
+    <!--i view current weather conditions for that city-->
+    <!--i am presented with city name the date an icon representation of weather conditions the temeture the humidity and the wind speed and humidity-->
+    <!--when i click the city in the search history it presents the inforation again -->
+
+
+<form class="searching">
+    <h1>Search for a City</h1>
+    <input type="text" name="City Name" id="searchcity">
+    <button id="search">Search</button>
+</form>
+<section class="prevsearched">
+    <ul class="lihome">
+
+    </ul>
+</section>
+<section class="currentweather">
+    <div class="citysearched"></div>
+    <div data-weather="temp"></div>
+    <div data-weather="wind"></div>
+    <div data-weather="humidity"></div>
+</section>
+<section class="daysforcast" >
+    <h4>5-Day Forecast</h4>
+<article class="day1">
+    <div data-future="date"></div>
+    <div data-future="symbol"></div>
+    <div data-future="temp"></div>
+    <div data-future="wind"></div>
+    <div data-future="humidity"></div>
+</article>
+<article class="day2">
+    <div data-future="date"></div>
+    <div data-future="symbol"></div>
+    <div data-future="temp"></div>
+    <div data-future="wind"></div>
+    <div data-future="humidity"></div>
+</article>
+<article class="day3">
+    <div data-future="date"></div>
+    <div data-future="symbol"></div>
+    <div data-future="temp"></div>
+    <div data-future="wind"></div>
+    <div data-future="humidity"></div>
+</article>
+<article class="day4">
+    <div data-future="date"></div>
+    <div data-future="symbol"></div>
+    <div data-future="temp"></div>
+    <div data-future="wind"></div>
+    <div data-future="humidity"></div>
+</article>
+<article class="day5">
+    <div data-future="date"></div>
+    <div data-future="symbol"></div>
+    <div data-future="temp"></div>
+    <div data-future="wind"></div>
+    <div data-future="humidity"></div>
+</article>
+</section>
+
+
+
+
+</body>
+</html>
