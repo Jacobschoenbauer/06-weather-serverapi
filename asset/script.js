@@ -1,17 +1,21 @@
-const searchButton = document.getElementById("search");
-const APIKey = "f4cba9e7f452234c91b154152aa8da72"
-var gettingWeather = function () {
-  var requestURL = "api.openweathermap.org/data/2.5/weather?q={city name}&appid={APIkey}"
-  
-    
+const APIkey = "f4cba9e7f452234c91b154152aa8da72";
 
-  fetch(requestURL)
-    .then(function (responce) {
-      return responce.json(data);
+var repoList = document.querySelector("ul");
+var fetchButton = document.getElementById("search");
+
+function getApi() {
+  var requestUrl =
+    "https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`";
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
     })
     .then(function (data) {
-      console.log(data);
-    });
+        console.log(data)
+    })
+      
+      
 }
 
-searchButton.addEventListener("click", gettingWeather)
+
+fetchButton.addEventListener("button", getApi);
