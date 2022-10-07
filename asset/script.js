@@ -1,17 +1,25 @@
 const APIkey = "f4cba9e7f452234c91b154152aa8da72";
-
+let repoList = document.querySelector("ul");
 const fetchButton = document.getElementById("search");
-const lat = 44.71469;
-const lon = -93.261124;
+let cityName = document.getElementById("searchcity").value;
+
 function getApi() {
-  const requestUrl = `https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}`;
+  let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=lakeville&appid=${APIkey}`;
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
+
+      var weatherPost = document.createElement("h3");
+
+      weatherPost.textContent = data.list[1].title;
+
+     
     });
 }
 
 fetchButton.addEventListener("click", getApi);
+
+//https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}
