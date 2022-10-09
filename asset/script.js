@@ -37,7 +37,7 @@ function getApi() {
     });
 }
 function fiveDay(){
-  let urlRequest = "https://api.openweathermap.org/data/2.5/uvi?appid="+APIkey+"&lat="+lat+"&lon="+ lon
+  let urlRequest = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid="+APIkey
 
   fetch(urlRequest)
   .then(function (response) {
@@ -45,6 +45,9 @@ function fiveDay(){
   })
   .then(function (fiveData) {
     console.log(fiveData);
+    let dayOne = fiveData.list[0].weather
+    console.log(dayOne)
+    
 })
 }
 
