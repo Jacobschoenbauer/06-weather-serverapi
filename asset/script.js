@@ -5,6 +5,8 @@ let cityInput = document.getElementById("searchcity");
 const placeTemp = document.querySelector(".temp");
 const placeHumidty = document.querySelector(".humidity");
 const placeWind = document.querySelector(".windspeed");
+let lat = 44.714691
+let lon = -93.261124
 
 function getApi() {
   let requestUrl =
@@ -34,6 +36,18 @@ function getApi() {
       placeWind.textContent = "Wind " + currentWind + " mph";
     });
 }
+function fiveDay(){
+  let urlRequest = "https://api.openweathermap.org/data/2.5/uvi?appid="+APIkey+"&lat="+lat+"&lon="+ lon
+
+  fetch(urlRequest)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (fiveData) {
+    console.log(fiveData);
+})
+}
+
 fetchButton.addEventListener("click", function () {
   let citylist = cityInput.value;
   localStorage.setItem("city", citylist);
@@ -46,9 +60,11 @@ fetchButton.addEventListener("click", function () {
   console.log(cityNames);
   let placeName = document.querySelector(".thename");
   placeName.textContent = cityNames;
-
+  
   getApi();
 });
+
+fiveDay()
 
 //https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}
 //https://api.openweathermap.org/data/2.5/forecast?q=lakeville&appid=${APIkey}

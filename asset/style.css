@@ -6,12 +6,16 @@ button{
 .searching{
 display: flex;
 align-items: flex-end;
+background-color: aqua;
+margin: 10px;
+height: 55px;
 
    
 }
 .beautiful{
     display: flex;
     align-items: flex-start;
+    
 }
 .daily{
 
