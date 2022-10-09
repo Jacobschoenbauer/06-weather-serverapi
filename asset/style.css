@@ -1,7 +1,13 @@
+button{
+    display: flex;
+}
+
+
 .searching{
-    background-color: aqua;
-    width: 250px;
-    height: 100px
+display: flex;
+align-items: flex-end;
+
+   
 }
 .beautiful{
     display: flex;
@@ -19,3 +25,7 @@
 .temp, .humidity, .windspeed{margin: 5px;
 
 }   
+button{
+    margin: 20px 0px 0px;
+    
+}
