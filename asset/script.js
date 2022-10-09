@@ -13,6 +13,7 @@ function getApi() {
     "&appid=" +
     APIkey +
     "&units=imperial";
+  // fetch to get variables need to set them in html
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -26,14 +27,20 @@ function getApi() {
 
       let currentHumidty = tempData.main.humidity;
       console.log(currentHumidty);
-      placeHumidty.textContent ="Humidity " + currentHumidty + " %";
+      placeHumidty.textContent = "Humidity " + currentHumidty + " %";
 
       let currentWind = tempData.wind.speed;
       console.log(currentWind);
       placeWind.textContent = "Wind " + currentWind + " mph";
     });
 }
+fetchButton.addEventListener("click", function () {
+  let citylist =  cityInput.value
+    
+  
 
+  localStorage.setItem("city", citylist);
+});
 fetchButton.addEventListener("click", function () {
   cityNames = cityInput.value;
   console.log(cityNames);
@@ -42,9 +49,6 @@ fetchButton.addEventListener("click", function () {
 
   getApi();
 });
-
-
-
 
 //https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}
 //https://api.openweathermap.org/data/2.5/forecast?q=lakeville&appid=${APIkey}
