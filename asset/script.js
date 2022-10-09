@@ -1,23 +1,31 @@
 const APIkey = "f4cba9e7f452234c91b154152aa8da72";
-let tempDegree = document.querySelector(".temp");
-let locateTime = document.querySelector(".location");
-let tempData = document.querySelector(".description");
+let citySearch = "Lakeville"
 
 const fetchButton = document.getElementById("search");
 let cityName = document.getElementById("searchcity").value;
-let lat = lat
-let lon = lon
+
 function getApi() {
-  let requestUrl = `https://api.openweathermap.org/data/2.5/uvi?q=lakeville&appid=${APIkey}&lat=${lat}&lon=${lon}`;
+  let requestUrl = "https://api.openweathermap.org/data/2.5/weather?q="+ citySearch +"&appid=" + APIkey+"&units=imperial"
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
+    .then(function (tempData) {
+     console.log(tempData)
+     let currentTemp = tempData.main.temp
+     console.log(currentTemp)
+      let placeTemp = document.querySelector(".temp")
+      placeTemp.textContent=currentTemp
 
-      
+      let currentHumidty = tempData.main.humidity
+      console.log(currentHumidty)
+      let placeHumidty = document.querySelector(".humidity")
+      placeHumidty.textContent=currentHumidty
 
+      let currentWind = tempData.wind.speed
+      console.log(currentWind)
+      let placeWind = document.querySelector(".windspeed")
+      placeWind.textContent=currentWind
      
     });
 }
