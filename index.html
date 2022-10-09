@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Project</title>
-<link rel="stylesheet" href="asset/style.css">
+    <link rel="stylesheet" href="asset/style.css">
 </head>
+
 <body>
     <!--Weather dashboard with form inputs able to search for city-->
     <!--Presents current and future weather conditions and city is added to search history-->
@@ -14,22 +16,26 @@
     <!--i am presented with city name the date an icon representation of weather conditions the temeture the humidity and the wind speed and humidity-->
     <!--when i click the city in the search history it presents the inforation again -->
 
+    <article class="daily">
+        <div class="searching">
+            <h1>Search for a City</h1>
+            <input type="text" name="cityname" id="searchcity">
+            <button id="search">Search</button>
+        </div>
+        <section class="beautiful">
+            <h2 class="thename"></h2>
+            <div class="weather">
+                <div class="temp"></div>
+                <div class="humidity"></div>
+                <div class="windspeed"></div>
+            </div>
+        </section>
 
-<div class="searching">
-    <h1>Search for a City</h1>
-    <input type="text" name="cityname" id="searchcity">
-    <button id="search">Search</button>
-</div>
-<h2 class="thename"></h2>
-<div class="temp"></div>
-<div class="humidity"></div>
-<div class="windspeed"></div>
-   
+    </article>
 
 
 
-
-
-<script src="asset/script.js"></script>
+    <script src="asset/script.js"></script>
 </body>
+
 </html>

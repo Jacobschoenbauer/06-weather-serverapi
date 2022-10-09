@@ -1,0 +1,21 @@
+.searching{
+    background-color: aqua;
+    width: 250px;
+    height: 100px
+}
+.beautiful{
+    display: flex;
+    align-items: flex-start;
+}
+.daily{
+
+    display: flex;
+}
+.weather{
+    display: flex;
+    flex-direction:column ;
+    margin: 40px;
+}
+.temp, .humidity, .windspeed{margin: 5px;
+
+}   
