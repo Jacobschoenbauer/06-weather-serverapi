@@ -35,11 +35,11 @@ function getApi() {
     });
 }
 fetchButton.addEventListener("click", function () {
-  let citylist =  cityInput.value
-    
-  
-
+  let citylist = cityInput.value;
   localStorage.setItem("city", citylist);
+  let btn = document.createElement("button");
+  btn.innerHTML = cityInput.value;
+  document.body.appendChild(btn);
 });
 fetchButton.addEventListener("click", function () {
   cityNames = cityInput.value;
