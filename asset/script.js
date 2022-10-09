@@ -22,15 +22,15 @@ function getApi() {
 
       let currentTemp = tempData.main.temp;
       console.log(currentTemp);
-      placeTemp.textContent = currentTemp + " degrees";
+      placeTemp.textContent = "Temp " + currentTemp + " degrees";
 
       let currentHumidty = tempData.main.humidity;
       console.log(currentHumidty);
-      placeHumidty.textContent = currentHumidty + " %";
+      placeHumidty.textContent ="Humidity " + currentHumidty + " %";
 
       let currentWind = tempData.wind.speed;
       console.log(currentWind);
-      placeWind.textContent = currentWind + " mph";
+      placeWind.textContent = "Wind " + currentWind + " mph";
     });
 }
 
@@ -42,6 +42,9 @@ fetchButton.addEventListener("click", function () {
 
   getApi();
 });
+
+
+
 
 //https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}
 //https://api.openweathermap.org/data/2.5/forecast?q=lakeville&appid=${APIkey}
