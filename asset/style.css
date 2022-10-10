@@ -40,6 +40,7 @@ button{
 }
 .oneday, .twoday, .threeday, .fourday, .fiveday{
     margin: 0px 60px;
-    background-color: rgb(148, 148, 207);
-    width: 100px;
+    background-color: aqua;
+    width: 1160px;
+    font-size: 30px;
 }
