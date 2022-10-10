@@ -6,18 +6,19 @@ const placeTemp = document.querySelector(".temp");
 const placeHumidty = document.querySelector(".humidity");
 const placeWind = document.querySelector(".windspeed");
 
+//section for temp on the five day to connect to the html
 let oneTemp = document.querySelector(".temp1");
 let twoTemp = document.querySelector(".temp2");
 let threeTemp = document.querySelector(".temp3");
 let fourTemp = document.querySelector(".temp4");
 let fiveTemp = document.querySelector(".temp5");
-
+//section for the humity  to connect to the html
 let oneHum = document.querySelector(".hum1");
 let twoHum = document.querySelector(".hum2");
 let threeHum = document.querySelector(".hum3");
 let fourHum = document.querySelector(".hum4");
 let fiveHum = document.querySelector(".hum5");
-
+// section for the wind to connect to the html
 let oneWind = document.querySelector(".wind1");
 let twoWind = document.querySelector(".wind2");
 let threeWind = document.querySelector(".wind3");
@@ -28,7 +29,7 @@ let icon1 = document.querySelector(".icon1")
 lats = "44.977753"
 lons = "-93.265015"
 
-
+//  the fetch and function to get info a place it in to html with text content 
 function getApi() {
   let requestUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -67,7 +68,7 @@ function getApi() {
   
  
 
-
+// funtion to set up the 5 day info and send it to the html
 function fiveDay() {
   let urlRequest =
   "https://api.openweathermap.org/data/2.5/forecast?lat=" +
@@ -141,9 +142,9 @@ function fiveDay() {
       fiveWind.textContent = day5Five;
     });
 }
-
+// click event for fiveday to go on to web page
 fetchButton.addEventListener("click", fiveDay);
-
+// adds buttons to get the names for the previous searches and sends them to local storage
 fetchButton.addEventListener("click", function () {
   let citylist = cityInput.value;
   localStorage.setItem("city", citylist);
@@ -151,6 +152,7 @@ fetchButton.addEventListener("click", function () {
   btn.innerHTML = cityInput.value;
   document.body.appendChild(btn);
 });
+// button to get the single day forcast
 fetchButton.addEventListener("click", function () {
   cityNames = cityInput.value;
   console.log(cityNames);
