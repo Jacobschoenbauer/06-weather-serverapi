@@ -1,7 +1,9 @@
 button{
     display: flex;
 }
-
+.daily{
+    display: flex;
+}
 
 .searching{
 display: flex;
@@ -17,10 +19,8 @@ height: 55px;
     align-items: flex-start;
     
 }
-.daily{
 
-    display: flex;
-}
+
 .weather{
     display: flex;
     flex-direction:column ;
@@ -32,4 +32,12 @@ height: 55px;
 button{
     margin: 20px 0px 0px;
     
+}
+.fivefor{
+    display: flex;
+    align-items: flex-end;
+
+}
+.oneday, .twoday, .threeday, .fourday, .fiveday{
+    margin: 0px 60px;
 }

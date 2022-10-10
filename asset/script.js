@@ -8,6 +8,24 @@ const placeWind = document.querySelector(".windspeed");
 let lat = 44.714691
 let lon = -93.261124
 
+let oneTemp = document.querySelector(".temp1")
+let twoTemp = document.querySelector(".temp2")
+let threeTemp = document.querySelector(".temp3")
+let fourTemp = document.querySelector(".temp4")
+let fiveTemp = document.querySelector(".temp5")
+
+
+
+
+
+
+
+
+
+
+
+
+
 function getApi() {
   let requestUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -45,11 +63,27 @@ function fiveDay(){
   })
   .then(function (fiveData) {
     console.log(fiveData);
-    let dayOne = fiveData.list[0].weather
+    let dayOne = fiveData.list[0].main.temp
+    let dayTwo = fiveData.list[1].main.temp
+    let dayThree = fiveData.list[2].main.temp
+    let dayFour = fiveData.list[3].main.temp
+    let dayFive = fiveData.list[4].main.temp
+    
     console.log(dayOne)
+    console.log(dayTwo)
+    console.log(dayThree)
+    console.log(dayFour)
+    console.log(dayFive)
+    oneTemp.textContent= dayOne
+    twoTemp.textContent= dayTwo
+    threeTemp.textContent=dayThree
+    fourTemp.textContent=dayFour
+    fiveDay.textContent=dayFive
     
 })
 }
+fetchButton.addEventListener("click", fiveDay)
+
 
 fetchButton.addEventListener("click", function () {
   let citylist = cityInput.value;
@@ -67,7 +101,7 @@ fetchButton.addEventListener("click", function () {
   getApi();
 });
 
-fiveDay()
+
 
 //https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}
 //https://api.openweathermap.org/data/2.5/forecast?q=lakeville&appid=${APIkey}
