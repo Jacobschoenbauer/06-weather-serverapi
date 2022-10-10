@@ -25,11 +25,10 @@ let threeWind = document.querySelector(".wind3");
 let fourWind = document.querySelector(".wind4");
 let fiveWind = document.querySelector(".wind5");
 
-let icon1 = document.querySelector(".icon1")
-lats = "44.977753"
-lons = "-93.265015"
+let icon1 = document.querySelector(".icon1");
 
-//  the fetch and function to get info a place it in to html with text content 
+
+//  the fetch and function to get info a place it in to html with text content
 function getApi() {
   let requestUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -38,7 +37,7 @@ function getApi() {
     APIkey +
     "&units=imperial";
   // fetch to get variables need to set them in html
-  fetch(requestUrl)
+   return fetch(requestUrl) 
     .then(function (response) {
       return response.json();
     })
@@ -47,7 +46,7 @@ function getApi() {
 
       let currentTemp = tempData.main.temp;
       console.log(currentTemp);
-      placeTemp.textContent = "Temp " + currentTemp + " degrees";
+      placeTemp.innerHTML = "Temp " + currentTemp + " &deg";
 
       let currentHumidty = tempData.main.humidity;
       console.log(currentHumidty);
@@ -56,46 +55,45 @@ function getApi() {
       let currentWind = tempData.wind.speed;
       console.log(currentWind);
       placeWind.textContent = "Wind " + currentWind + " mph";
-      
+
       let lats = tempData.coord.lat;
       console.log(lats);
       let lons = tempData.coord.lon;
       console.log(lons);
-     
-    });
-  }
+      return tempData.coord
 
-  
- 
+
+
+    });
+}
 
 // funtion to set up the 5 day info and send it to the html
-function fiveDay() {
+function fiveDay(lats, lons) {
   let urlRequest =
-  "https://api.openweathermap.org/data/2.5/forecast?lat=" +
-  lats +
-  "&lon=" +
-  lons +
-  "&appid=" +
-  APIkey;
+    "https://api.openweathermap.org/data/2.5/forecast?lat=" +
+    lats +
+    "&lon=" +
+    lons +
+    "&appid=" +
+    APIkey;
 
-  
   fetch(urlRequest)
     .then(function (response) {
       return response.json();
     })
     .then(function (fiveData) {
       console.log(fiveData);
-      let dayOne = fiveData.list[0].main.temp + " degrees";
-      let dayTwo = fiveData.list[1].main.temp + " degrees";
-      let dayThree = fiveData.list[2].main.temp + " degrees";
-      let dayFour = fiveData.list[3].main.temp + " degrees";
-      let dayFive = fiveData.list[4].main.temp + " degrees";
+      let dayOne = fiveData.list[0].main.temp + " &deg;";
+      let dayTwo = fiveData.list[1].main.temp + " &deg;";
+      let dayThree = fiveData.list[2].main.temp + " &deg;";
+      let dayFour = fiveData.list[3].main.temp + " &deg;";
+      let dayFive = fiveData.list[4].main.temp + " &deg;";
 
       let dayOne1 = fiveData.list[0].main.humidity + " %";
-      let dayTwo2 = fiveData.list[1].main.humidity  + " %";
-      let dayThree3 = fiveData.list[2].main.humidity  + " %";
-      let dayFour4 = fiveData.list[3].main.humidity  + " %";
-      let dayFive5 = fiveData.list[4].main.humidity  + " %";
+      let dayTwo2 = fiveData.list[1].main.humidity + " %";
+      let dayThree3 = fiveData.list[2].main.humidity + " %";
+      let dayFour4 = fiveData.list[3].main.humidity + " %";
+      let dayFive5 = fiveData.list[4].main.humidity + " %";
 
       let day1One = fiveData.list[0].wind.speed + " mph";
       let day2Two = fiveData.list[1].wind.speed + " mph";
@@ -103,21 +101,19 @@ function fiveDay() {
       let day4Four = fiveData.list[3].wind.speed + " mph";
       let day5Five = fiveData.list[4].wind.speed + " mph";
 
-      let iconPicture = fiveData.list[0].weather[0].icon
-      icon1.textContent=iconPicture
-      
-      
-      
+      let iconPicture = fiveData.list[0].weather[0].icon;
+      icon1.textContent = iconPicture;
+
       console.log(dayOne);
       console.log(dayTwo);
       console.log(dayThree);
       console.log(dayFour);
       console.log(dayFive);
-      oneTemp.textContent = dayOne;
-      twoTemp.textContent = dayTwo;
-      threeTemp.textContent = dayThree;
-      fourTemp.textContent = dayFour;
-      fiveTemp.textContent = dayFive;
+      oneTemp.innerHTML = dayOne;
+      twoTemp.innerHTML = dayTwo;
+      threeTemp.innerHTML = dayThree;
+      fourTemp.innerHTML = dayFour;
+      fiveTemp.innerHTML = dayFive;
 
       console.log(dayOne1);
       console.log(dayTwo2);
@@ -143,7 +139,7 @@ function fiveDay() {
     });
 }
 // click event for fiveday to go on to web page
-fetchButton.addEventListener("click", fiveDay);
+
 // adds buttons to get the names for the previous searches and sends them to local storage
 fetchButton.addEventListener("click", function () {
   let citylist = cityInput.value;
@@ -158,8 +154,11 @@ fetchButton.addEventListener("click", function () {
   console.log(cityNames);
   let placeName = document.querySelector(".thename");
   placeName.textContent = cityNames;
-
-  getApi();
+//sends lat and lon back to fiveday function
+  getApi().then(function(coord){
+    fiveDay(coord.lat, coord.lon)
+  })
+  
 });
 
 //https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}
