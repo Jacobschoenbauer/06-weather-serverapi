@@ -163,3 +163,4 @@ fetchButton.addEventListener("click", function () {
 
 //https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}
 //https://api.openweathermap.org/data/2.5/forecast?q=lakeville&appid=${APIkey}
+

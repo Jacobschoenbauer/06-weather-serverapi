@@ -41,6 +41,6 @@ button{
 .oneday, .twoday, .threeday, .fourday, .fiveday{
     margin: 0px 60px;
     background-color: aqua;
-    width: 1160px;
+    width: 60px;
     font-size: 30px;
 }
