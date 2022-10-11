@@ -91,7 +91,7 @@ function fiveDay(lats, lons) {
     "&lon=" +
     lons +
     "&appid=" +
-    APIkey;
+    APIkey+"&units=imperial"
 
   fetch(urlRequest)
     .then(function (response) {
