@@ -17,4 +17,4 @@ https://jacobschoenbauer.github.io/06-weather-serverapi/
  https://github.com/Jacobschoenbauer/06-weather-serverapi
  
  ## Picture
- ![img](asset/Screenshot%202022-10-09%20212648.png)cture
+ ![img](asset/Screenshot%202022-10-11%20182242.png)

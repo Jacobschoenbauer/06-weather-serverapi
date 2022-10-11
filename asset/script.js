@@ -123,13 +123,18 @@ function fiveDay(lats, lons) {
       let iconPicture3 = fiveData.list[2].weather[0].icon;
       let iconPicture4 = fiveData.list[3].weather[0].icon;
       let iconPicture5  = fiveData.list[4].weather[0].icon;
-     
-     
-      icon1.textContent = iconPicture;
-      icon2.textContent = iconPicture2;
-      icon3.textContent = iconPicture3;
-      icon4.textContent = iconPicture4;
-      icon5.textContent = iconPicture5;
+     console.log(iconPicture)
+    var urlDay1 = "https://openweathermap.org/img/w/"+iconPicture +".png"
+    var urlDay2 = "https://openweathermap.org/img/w/"+iconPicture2 +".png"
+    var urlDay3 = "https://openweathermap.org/img/w/"+iconPicture3 +".png"
+    var urlDay4 = "https://openweathermap.org/img/w/"+iconPicture4 +".png"
+    var urlDay5 = "https://openweathermap.org/img/w/"+iconPicture4 +".png"
+      
+    icon1.setAttribute("src", urlDay1)
+    icon2.setAttribute("src", urlDay2)
+    icon3.setAttribute("src", urlDay3)
+    icon4.setAttribute("src", urlDay4)
+    icon5.setAttribute("src", urlDay5)
     
     
       // let iconPicture = fiveData.list[0].weather[0].icon;
