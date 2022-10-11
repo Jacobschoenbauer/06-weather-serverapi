@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Project</title>
     <link rel="stylesheet" href="asset/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -19,58 +21,58 @@
     <article class="daily">
         <div class="searching">
             <h1>Search for a City</h1>
-             <input type="text" name="cityname" id="searchcity">
+            <input type="text" name="cityname" id="searchcity">
             <button id="search">Search</button>
         </div>
         <!--section for todays weather-->
         <section class="beautiful">
             <h2 class="thename"></h2>
             <div class="weather">
+                <div id="date"></div>
                 <div class="temp"></div>
                 <div class="humidity"></div>
                 <div class="windspeed"></div>
             </div>
         </section>
-    <!--section for the 5 day forcast-->
+        <!--section for the 5 day forcast-->
     </article>
-        <article class="fivefor">
-            <section class="oneday">
-                <div class="temp1"></div>
-                <div class="hum1"></div>
-                <div class="icon1"></div>
-                <div class="wind1"></div>
+    <article class="fivefor">
+        <section class="oneday">
+            <div class="temp1"></div>
+            <div class="hum1"></div>
+            <div class="wind1"></div>
 
-            </section>
-            <section class="twoday">
-                <div class="temp2"></div>
-                <div class="hum2"></div>
-                <div class="wind2"></div>
+        </section>
+        <section class="twoday">
+            <div class="temp2"></div>
+            <div class="hum2"></div>
+            <div class="wind2"></div>
 
-            </section>
-            <section class="threeday">
-                <div class="temp3"></div>
-                <div class="hum3"></div>
-                <div class="wind3"></div>
+        </section>
+        <section class="threeday">
+            <div class="temp3"></div>
+            <div class="hum3"></div>
+            <div class="wind3"></div>
 
-            </section>
-            <section class="fourday">
-                <div class="temp4"></div>
-                <div class="hum4"></div>
-                <div class="wind4"></div>
+        </section>
+        <section class="fourday">
+            <div class="temp4"></div>
+            <div class="hum4"></div>
+            <div class="wind4"></div>
 
-            </section>
-            <section class="fiveday">
-                <div class="temp5"></div>
-                <div class="hum5"></div>
-                <div class="wind5"></div>
+        </section>
+        <section class="fiveday">
+            <div class="temp5"></div>
+            <div class="hum5"></div>
+            <div class="wind5"></div>
 
-            </section>
-         
-        
-      
+        </section>
+
+
+
 
     </article>
-    
+
 
 
     <script src="asset/script.js"></script>

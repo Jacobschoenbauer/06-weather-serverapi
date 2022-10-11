@@ -5,6 +5,8 @@ let cityInput = document.getElementById("searchcity");
 const placeTemp = document.querySelector(".temp");
 const placeHumidty = document.querySelector(".humidity");
 const placeWind = document.querySelector(".windspeed");
+const theDate = document.querySelector(".date")
+
 
 //section for temp on the five day to connect to the html
 let oneTemp = document.querySelector(".temp1");
@@ -28,7 +30,13 @@ let fiveWind = document.querySelector(".wind5");
 let icon1 = document.querySelector(".icon1");
 
 
+
+
+
+
+
 //  the fetch and function to get info a place it in to html with text content
+
 function getApi() {
   let requestUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -55,6 +63,9 @@ function getApi() {
       let currentWind = tempData.wind.speed;
       console.log(currentWind);
       placeWind.textContent = "Wind " + currentWind + " mph";
+
+     
+
 
       let lats = tempData.coord.lat;
       console.log(lats);
@@ -101,8 +112,8 @@ function fiveDay(lats, lons) {
       let day4Four = fiveData.list[3].wind.speed + " mph";
       let day5Five = fiveData.list[4].wind.speed + " mph";
 
-      let iconPicture = fiveData.list[0].weather[0].icon;
-      icon1.textContent = iconPicture;
+     // let iconPicture = fiveData.list[0].weather[0].icon;
+      //icon1.textContent = iconPicture;
 
       console.log(dayOne);
       console.log(dayTwo);
@@ -160,7 +171,8 @@ fetchButton.addEventListener("click", function () {
   })
   
 });
-
+let today = moment();
+$("#date").text(today.format("MMM Do, YYYY"));
 //https://api.openweathermap.org/data/2.5/uvi?appid=${APIkey}&lat=${lat}&lon=${lon}
 //https://api.openweathermap.org/data/2.5/forecast?q=lakeville&appid=${APIkey}
 
