@@ -28,6 +28,11 @@ let fourWind = document.querySelector(".wind4");
 let fiveWind = document.querySelector(".wind5");
 
 let icon1 = document.querySelector(".icon1");
+let icon2 = document.querySelector(".icon2");
+let icon3 = document.querySelector(".icon3");
+let icon4 = document.querySelector(".icon4");
+let icon5 = document.querySelector(".icon5");
+
 
 
 
@@ -112,7 +117,22 @@ function fiveDay(lats, lons) {
       let day4Four = fiveData.list[3].wind.speed + " mph";
       let day5Five = fiveData.list[4].wind.speed + " mph";
 
-     // let iconPicture = fiveData.list[0].weather[0].icon;
+    
+      let iconPicture = fiveData.list[0].weather[0].icon;
+      let iconPicture2 = fiveData.list[1].weather[0].icon; 
+      let iconPicture3 = fiveData.list[2].weather[0].icon;
+      let iconPicture4 = fiveData.list[3].weather[0].icon;
+      let iconPicture5  = fiveData.list[4].weather[0].icon;
+     
+     
+      icon1.textContent = iconPicture;
+      icon2.textContent = iconPicture2;
+      icon3.textContent = iconPicture3;
+      icon4.textContent = iconPicture4;
+      icon5.textContent = iconPicture5;
+    
+    
+      // let iconPicture = fiveData.list[0].weather[0].icon;
       //icon1.textContent = iconPicture;
 
       console.log(dayOne);
